@@ -1,0 +1,2945 @@
+openapi: 3.0.0
+info:
+  title: "Swagger API Specification for CCE"
+  version: "v1.1"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0"
+
+  description: "Swagger API Specification for CCE"
+
+paths:
+  '/v1/CT1/':
+    post: #RESPONSE
+      tags:
+        - CreditTransfer
+      description: Outbound Credit Transfer 
+      operationId: CT1
+      requestBody:
+        $ref: "#/components/requestBodies/CT1"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CT1'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/CT4ACTC' 
+        "405":
+          description: "Negative response"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CT4'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/CT4RJCT' 
+  
+  '/v1/CT2/':
+    post: #RESPONSE
+      tags:
+        - CreditTransfer
+      description: Inbound Credit Transfer 
+      operationId: CT2
+      requestBody:
+        $ref: "#/components/requestBodies/CT2"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CT3'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/CT3ACTC' 
+        "405":
+          description: "Negative response"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CT3'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/CT3RJCT' 
+  
+  '/v1/CT5/':
+    post: #RESPONSE
+      tags:
+        - CreditTransfer
+      description: Settlement Confirmation
+      operationId: CT5
+      requestBody:
+        $ref: "#/components/requestBodies/CT5"
+
+      responses:
+        "200":
+          description: "Successful operation"
+    
+  '/v1/AV1/':
+    post: #RESPONSE
+      tags:
+        - AccountVerification
+      description: Outbound Account Verification 
+      operationId: AV1
+      requestBody:
+        $ref: "#/components/requestBodies/AV1"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AV4'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/AV4ACTC' 
+        "405":
+          description: "Negative response"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AV4'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/AV4RJCT'    
+
+  '/v1/AV2/':
+    post: #RESPONSE
+      tags:
+        - AccountVerification
+      description: Inbound Account Verification 
+      operationId: AV2
+      requestBody:
+        $ref: "#/components/requestBodies/AV2"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AV3'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/AV3ACTC' 
+        "405":
+          description: "Negative response"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AV3'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/AV3RJCT'
+
+  '/v1/CTC1/':
+    post: #RESPONSE
+      tags:
+        - PaymentCancellation
+      description: Payment Cancellation
+      operationId: CTC1
+      requestBody:
+        $ref: "#/components/requestBodies/CTC1"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CTC2'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/CTC2ACTC' 
+
+  '/v1/PSR1/':
+    post: #RESPONSE
+      tags:
+        - PaymentStatusInquiry
+      description: Payment Status Inquiry
+      operationId: PSR1
+      requestBody:
+        $ref: "#/components/requestBodies/PSR1"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PSR2'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/PSR2ACTC' 
+        "405":
+          description: "Negative response"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PSR2'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/PSR2RJCT'
+    
+  
+  
+  '/v1/SignOn1/':
+    post: #RESPONSE
+      tags:
+        - Sign On/Off
+      description: Sign On Request and Response
+      operationId: SignOn1
+      requestBody:
+        $ref: "#/components/requestBodies/SignOn1"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignOn2'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/SignOn2ACTC' 
+        "405":
+          description: "Negative response"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignOn2'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/SignOn2RJCT'
+                  
+                  
+  '/v1/SignOff1/':
+    post: #RESPONSE
+      tags:
+        - Sign On/Off
+      description: Sign Off Request and Response
+      operationId: SignOff1
+      requestBody:
+        $ref: "#/components/requestBodies/SignOff1"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignOff2'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/SignOff2ACTC' 
+        "405":
+          description: "Negative response"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignOff2'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/SignOff2RJCT'
+                  
+    
+  '/v1/ET1/':
+    post: #RESPONSE
+      tags:
+        - EchoTest
+      description: Bidirectional Echo Test from Participant
+      operationId: ET1
+      requestBody:
+        $ref: "#/components/requestBodies/ET1"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          headers:
+            Content-Type:
+              description: >-
+                Message type (application/json)
+              schema:
+                type: string
+            Content-Lenght:
+              description: >-
+                Message length
+              schema:
+                type: integer
+            Response:
+              description: >-
+                Status of the response
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ET2'
+              examples:
+                retorno1:
+                  $ref: '#/components/examples/ET2ACTC' 
+                  
+  '/v1/SNM971/':
+    post: #RESPONSE
+      tags:
+        -  System Notification Message 
+      description:  Support SNM – System status broadcast 
+      operationId:  SNM971 
+      requestBody:
+        $ref: "#/components/requestBodies/SNM971"
+
+      responses:
+        "2XX":
+          description: "Successful operation" 
+
+  '/v1/SNM972/':
+    post: #RESPONSE
+      tags:
+        -  System Notification Message 
+      description:  Support SNM – Participant suspend broadcast
+      operationId:  participantSuspendBroadcast
+      requestBody:
+        $ref: "#/components/requestBodies/SNM972"
+
+      responses:
+        "2XX":
+          description: "Successful operation" 
+
+  '/v1/SNM981/':
+    post: #RESPONSE
+      tags:
+        -  System Notification Message 
+      description:  Support SNM – Free Format Broadcast or Notification
+      operationId:  SNM981
+      requestBody:
+        $ref: "#/components/requestBodies/SNM981"
+
+      responses:
+        "2XX":
+          description: "Successful operation" 
+
+
+  '/v1/SNM982/':
+    post: #RESPONSE
+      tags:
+        -  System Notification Message 
+      description:  Support SNM – Participant status broadcast
+      operationId:  SNM982
+      requestBody:
+        $ref: "#/components/requestBodies/SNM982"
+
+      responses:
+        "2XX":
+          description: "Successful operation" 
+
+  '/v1/SNM993/':
+    post: #RESPONSE
+      tags:
+        -  System Notification Message 
+      description:  Support SNM – Available Prefunded Balance Warning Notification
+      operationId:  SNM993
+      requestBody:
+        $ref: "#/components/requestBodies/SNM993"
+
+      responses:
+        "2XX":
+          description: "Successful operation" 
+
+
+  '/v1/SNM998/':
+    post: #RESPONSE
+      tags:
+        -  System Notification Message 
+      description:  Support SNM – Prefunded Balance Change Notification
+      operationId:  SNM998
+      requestBody:
+        $ref: "#/components/requestBodies/SNM998"
+
+      responses:
+        "2XX":
+          description: "Successful operation" 
+
+
+  '/v1/SNM999/':
+    post: #RESPONSE
+      tags:
+        -  System Notification Message 
+      description:  Support SNM – Settlement Cycle Status Notification
+      operationId:  SNM999
+      requestBody:
+        $ref: "#/components/requestBodies/SNM999"
+
+      responses:
+        "2XX":
+          description: "Successful operation" 
+
+
+
+  '/v1/Reject/':
+    post: #RESPONSE
+      tags:
+        - Reject
+      description: Reject Message
+      operationId: Reject
+      requestBody:
+        $ref: "#/components/requestBodies/RJCT"
+
+      responses:
+        "200":
+          description: "Successful operation"
+          
+  
+  
+
+components: 
+  examples:
+    
+    CT4ACTC:
+      summary: CT4 "successful operation"
+      value:  
+        CT4:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          amount: 10000000
+          currency: "804"
+          transactionReference: "123456789"
+          responseCode: "00"
+          feeAmount: 10000
+          settlementDate: "20210209"
+          transactionType: "123"
+          debtorCCI: "9981958455"
+          creditorCCI: "9981958488"
+          sameCustomerFlag: "O"
+          instructionId: "00098765432156437"
+          creationDate: "20210209"
+          creationTime: "231200"
+          channel: "15"
+          interbankSettlementAmount: 10000
+    
+    CT4RJCT:
+      summary: CT4 "Negative response"
+      value:  
+        CT4:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          amount: 10000000
+          currency: "804"
+          transactionReference: "123456789"
+          responseCode: "05"
+          reasonCode: "RJCT"
+          feeAmount: 10000
+          settlementDate: "20210209"
+          transactionType: "123"
+          debtorCCI: "9981958455"
+          creditorCCI: "9981958488"
+          sameCustomerFlag: "O"
+          instructionId: "00098765432156437"
+          creationDate: "20210209"
+          creationTime: "231200"
+          channel: "15"
+          interbankSettlementAmount: 10000
+    
+    CT3ACTC:
+      summary: CT3 "successful operation"
+      value:  
+        CT3:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          amount: 10000000
+          currency: "804"
+          transactionReference: "123456789"
+          responseCode: "00"
+          feeAmount: 10000
+          settlementDate: "20210209"
+          transactionType: "123"
+          debtorCCI: "1981958455"
+          creditorCCI: "9819584888"
+          sameCustomerFlag: "O"
+          branchId: "00098765432156437"
+          instructionId: "00098765432156437"
+    
+    CT3RJCT:
+      summary: CT3 "Negative Response"
+      value:  
+        CT3:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          amount: 10000000
+          currency: "804"
+          transactionReference: "123456789"
+          responseCode: "05"
+          reasonCode: "RJCT"
+          feeAmount: 10000
+          settlementDate: "20210209"
+          transactionType: "123"
+          debtorCCI: "1981958455"
+          creditorCCI: "9819584889"
+          sameCustomerFlag: "O"
+          branchId: "00098765432156437"
+          instructionId: "00098765432156437"
+  
+    AV3ACTC:
+      summary: AV3 "successful operation"
+      value:  
+        AV3:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          creationDate: "20210209"
+          creationTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          branchId: "00098765432156437"
+          debtorName: "Juan Martinez"
+          debtorId: "999999999999"
+          debtorIdCode: "1"
+          debtorPhoneNumber: "7777777"
+          debtorAddressLine: "915 Willshire BLVD #1600, Los Angeles"
+          debtorMobileNumber: "888888888"
+          transactionType: "123"
+          channel: "15"
+          instructionId: "00098765432156437"
+          responseCode: "00"
+          creditorName: "Gustavo Chan"
+          creditorAddressLine: "916 Willshire BLVD #1600, Los Angeles"
+          creditorId: "999999999998"
+          creditorIdCode: "1"
+          creditorPhoneNumber: "7777777"
+          creditorMobileNumber: "888888888"
+          creditorCCI: "1981958488"
+          sameCustomerFlag: "O"
+          currency: "804"
+          proxyValue: "1234567890123"
+          proxyType: "12345"
+          
+    AV3RJCT:
+      summary: AV3 "Negative Response"
+      value:  
+        AV3:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          creationDate: "20210209"
+          creationTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          branchId: "00098765432156437"
+          debtorName: "Juan Martinez"
+          debtorId: "999999999999"
+          debtorIdCode: "1"
+          debtorPhoneNumber: "7777777"
+          debtorAddressLine: "915 Willshire BLVD #1600, Los Angeles"
+          debtorMobileNumber: "888888888"
+          transactionType: "123"
+          channel: "15"
+          instructionId: "00098765432156437"
+          responseCode: "05"
+          reasonCode: "RJCT"
+          creditorName: "Gustavo Chan"
+          creditorAddressLine: "916 Willshire BLVD #1600, Los Angeles"
+          creditorId: "999999999998"
+          creditorIdCode: "1"
+          creditorPhoneNumber: "7777777"
+          creditorMobileNumber: "888888888"
+          creditorCCI: "1981958488"
+          sameCustomerFlag: "O"
+          currency: "804"
+          proxyValue: "1234567890123"
+          proxyType: "12345"
+
+    AV4ACTC:
+      summary: AV4 "successful operation"
+      value:  
+        AV4:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          creationDate: "20210209"
+          creationTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          debtorName: "Juan Martinez"
+          debtorId: "999999999999"
+          debtorIdCode: "1"
+          debtorPhoneNumber: "7777777"
+          debtorAddressLine: "915 Willshire BLVD #1600, Los Angeles"
+          debtorMobileNumber: "888888888"
+          transactionType: "123"
+          channel: "15"
+          instructionId: "00098765432156437"
+          responseCode: "00"
+          creditorName: "Gustavo Chan"
+          creditorAddressLine: "916 Willshire BLVD #1600, Los Angeles"
+          creditorId: "999999999998"
+          creditorIdCode: "1"
+          creditorPhoneNumber: "7777777"
+          creditorMobileNumber: "888888888"
+          creditorCCI: "1981958488"
+          sameCustomerFlag: "O"
+          currency: "804"
+          proxyValue: "1234567890123"
+          proxyType: "12345"
+    
+    AV4RJCT:
+      summary: AV4 "Negative response"
+      value:  
+        AV4:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          creationDate: "20210209"
+          creationTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          debtorName: "Juan Martinez"
+          debtorId: "999999999999"
+          debtorIdCode: "1"
+          debtorPhoneNumber: "7777777"
+          debtorAddressLine: "915 Willshire BLVD #1600, Los Angeles"
+          debtorMobileNumber: "888888888"
+          transactionType: "123"
+          channel: "15"
+          instructionId: "00098765432156437"
+          responseCode: "05"
+          reasonCode: "RJCT"
+          creditorName: "Gustavo Chan"
+          creditorAddressLine: "916 Willshire BLVD #1600, Los Angeles"
+          creditorId: "999999999998"
+          creditorIdCode: "1"
+          creditorPhoneNumber: "7777777"
+          creditorMobileNumber: "888888888"
+          creditorCCI: "1981958488"
+          sameCustomerFlag: "O"
+          currency: "804"
+          proxyValue: "1234567890123"
+          proxyType: "12345"
+    
+    CTC2ACTC:
+      summary: CTC1 "successful operation"
+      value:  
+        CTC2:
+          creditorParticipantCode: "1111"
+          responseDate: "20210209"
+          responseTime: "231200"
+          currency: "804"
+          responseCode: "00"
+          branchId: "00098765432156437"
+          instructionId: "00098765432156437"
+
+    PSR2ACTC:
+      summary: PSR2 "successful operation"
+      value:  
+        PSR2:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          amount: 10000000
+          currency: "804"
+          transactionReference: "123456789"
+          responseCode: "00"
+          feeAmount: 10000
+          settlementDate: "20210209"
+          transactionType: "123"
+          debtorCCI: "1981958455"
+          creditorCCI: "9819584888"
+          creditorCreditCard: "120981958477"
+          sameCustomerFlag: "O"
+          instructionId: "00098765432156437"
+          interbankSettlementAmount: 10000
+          
+    PSR2RJCT:
+      summary: PSR2 "Negative Response"
+      value:  
+        PSR2:
+          debtorParticipantCode: "1234"
+          creditorParticipantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          terminalId: "12345678"
+          retrievalReferenteNumber: "123456789123"
+          trace: "123456"
+          amount: 10000000
+          currency: "804"
+          transactionReference: "123456789"
+          responseCode: "05"
+          reasonCode: "RJCT"
+          feeAmount: 10000
+          settlementDate: "20210209"
+          transactionType: "123"
+          debtorCCI: "1981958455"
+          creditorCCI: "9819584888"
+          creditorCreditCard: "120981958477"
+          sameCustomerFlag: "O"
+          instructionId: "00098765432156437"
+          interbankSettlementAmount: 10000
+    
+    SignOn2ACTC:
+      summary: SignOn2 "successful operation"
+      value:  
+        SignOn2:
+          participantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          status: "00"
+          trace: "129002"
+    
+    SignOn2RJCT:
+      summary: SignOn2 "Negative Response"
+      value:  
+        SignOn2:
+          participantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          status: "05"
+          reasonCode: "RJCT"
+          trace: "129002"
+    
+    SignOff2ACTC:
+      summary: SignOff2 "successful operation"
+      value:  
+        SignOff2:
+          participantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          status: "00"
+          reasonCode: "ACTC"
+          trace: "129002"
+    
+    SignOff2RJCT:
+      summary: SignOff2 "Negative Response"
+      value:  
+        SignOff2:
+          participantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          status: "05"
+          reasonCode: "RJCT"
+          trace: "129002"
+  
+    ET2ACTC:
+      summary: ET2 "successful operation"
+      value:  
+        ET2:
+          participantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          status: "00"
+          trace: "129002"
+    
+    ET2RJCT:
+      summary: ET2 "Negative Response"
+      value:  
+        ET2:
+          participantCode: "1111"
+          responseDate: "20210210"
+          responseTime: "231200"
+          status: "05"
+          reasonCode: "RJCT"
+          trace: "129002"
+
+  requestBodies:
+    CT1:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/CT1"
+              - title: CT1
+              
+    CT2:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/CT2"
+              - title: Credit Transfer 2
+    
+    CT5:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/CT5"
+              - title: Settlement confirmation
+              
+    AV1:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/AV1"
+              - title: Account Verification 1
+
+    AV2:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/AV2"
+              - title: Account Verification 2
+
+    RJCT:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/Reject"
+              - title: Reject
+
+    CTC1:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/CTC1"
+              - title: Credit Transfer Cancellation 1
+  
+    CTC2:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/CTC2"
+              - title: Credit Transfer Cancellation 2
+
+    PSR1:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/PSR1"
+              - title: Payment Status Inquiry 1
+    
+    PSR2:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/PSR2"
+              - title: Payment Status Inquiry 2   
+  
+    SignOn1:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SignOn1"
+              - title: Sign On 
+              
+    SignOff1:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SignOff1"
+              - title: Sign Off 
+    
+    ET1:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/ET1"
+              - title: Echo Test 
+    
+    SNM971:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SNM971"
+              - title: SNM971
+    
+    SNM972:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SNM972"
+              - title: SNM972
+    
+    SNM981:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SNM981"
+              - title: SNM981
+    
+    SNM982:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SNM982"
+              - title: SNM982
+
+
+    SNM993:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SNM993"
+              - title: SNM993
+
+
+    SNM998:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SNM998"
+              - title: SNM998
+    SNM999:
+      required: false
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/SNM999"
+              - title: SNM999
+
+  schemas:
+    CT1:
+          type: "object"
+          required:
+            - debtorParticipantCode 
+            - creditorParticipantCode
+            - creationDate
+            - creationTime
+            - messageTypeId
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - channel
+            - amount
+            - currency
+            - transactionType
+            - feeAmount
+            - feeCode
+            - applicationCriteria
+            - debtorTypeOfPerson
+            - debtorName
+            - debtorIdCode
+            - debtorId
+            - debtorCCI
+            - purposeCode
+          properties:
+            debtorParticipantCode: 
+              type: "string"
+              example: "1234"
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            messageTypeId:
+              type: "string"
+              example: "1235"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            channel:
+              type: "string"
+              example: "15"
+            amount:
+              type: "integer"
+              example: 10000000
+            currency:
+              type: "string"
+              example: "840"
+            transactionReference:
+              type: "string"
+              example: "123456733"
+            referenceTransactionId:
+              type: "string"
+              example: "123456789123330002"
+            transactionType:
+              type: "string"
+              example: 320
+            feeAmount:
+              type: "integer"
+              example: 10000
+            feeCode:
+              type: "string"
+              example: "ACTC"
+            applicationCriteria:
+              type: "string"
+              example: "A"
+            debtorTypeOfPerson:
+              type: "string"
+              example: "M"
+            debtorName:
+              type: "string"
+              example: "Juan Martinez"
+            debtorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            debtorIdCode:
+              type: "string"
+              example: "1"
+            debtorId:
+              type: "string"
+              example: "999999999999"
+            debtorPhoneNumber:
+              type: "string"
+              example:  "7777777"
+            debtorMobileNumber:
+              type: "string"
+              example: "888888888"
+            debtorCCI:
+              type: "string"
+              example: "981958488"
+            creditorName:
+              type: "string"
+              example: "Juana Martinez"
+            creditorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            creditorPhoneNumber:
+              type: "string"
+              example: "7777777"
+            creditorMobileNumber:
+              type: "string"
+              example: "888888888"
+            creditorCCI:
+              type: "string"
+              example: "0981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "0981958488"
+            sameCustomerFlag:
+              type: "string"
+              example: "O"
+            purposeCode:
+              type: "string"
+              example: "IPAY"
+            unstructuredInformation:
+              type: "string"
+              example: "Information"
+            grossSalaryAmount:
+              type: "integer"
+              example: 100
+            salaryPaymentIndicator:
+              type: "string"
+              example: "A"
+            monthOfThePayment:
+              type: "string"
+              example: "11"
+            yearOfThePayment:
+              type: "string"
+              example: "2020"
+    CT2:
+          type: "object"
+          required:
+            - creditorParticipantCode
+            - debtorParticipantCode
+            - creationDate
+            - creationTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - channel
+            - amount
+            - currency
+            - transactionType
+            - feeAmount
+            - feeCode
+            - applicationCriteria
+            - debtorTypeOfPerson
+            - debtorName
+            - debtorIdCode
+            - debtorId
+            - debtorCCI
+            - purposeCode
+            - branchId
+            - settlementDate
+            - instructionId
+            - interbankSettlementAmount
+          properties:
+            creditorParticipantCode: 
+              type: "string"
+              example: "1111"
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            channel:
+              type: "string"
+              example: "15"
+            amount:
+              type: "integer"
+              example: 10000000
+            currency:
+              type: "string"
+              example: "840"
+            transactionReference:
+              type: "string"
+              example: "123456733"
+            referenceTransactionId:
+              type: "string"
+              example: "123456789123330002"
+            transactionType:
+              type: "string"
+              example: "320"
+            feeAmount:
+              type: "integer"
+              example: 10000
+            feeCode:
+              type: "string"
+              example: "ACTC"
+            applicationCriteria:
+              type: "string"
+              example: "A"
+            debtorTypeOfPerson:
+              type: "string"
+              example: "M"
+            debtorName:
+              type: "string"
+              example: "Juan Martinez"
+            debtorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            debtorIdCode:
+              type: "string"
+              example: "1"
+            debtorId:
+              type: "string"
+              example: "999999999999"
+            debtorPhoneNumber:
+              type: "string"
+              example: "7777777"
+            debtorMobileNumber:
+              type: "string"
+              example: "888888888"
+            debtorCCI:
+              type: "string"
+              example: "981958488"
+            creditorName:
+              type: "string"
+              example: "Juana Martinez"
+            creditorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            creditorPhoneNumber:
+              type: "string"
+              example: "7777777"
+            creditorMobileNumber:
+              type: "string"
+              example: "888888888"
+            creditorCCI:
+              type: "string"
+              example:  "0981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "0981958488"
+            sameCustomerFlag:
+              type: "string"
+              example: "O"
+            purposeCode:
+              type: "string"
+              example: "IPAY"
+            unstructuredInformation:
+              type: "string"
+              example: "Information"
+            grossSalaryAmount:
+              type: "integer"
+              example: 100
+            salaryPaymentIndicator:
+              type: "string"
+              example: "A"
+            monthOfThePayment:
+              type: "string"
+              example: "11"
+            yearOfThePayment:
+              type: "string"
+              example: "2020"
+            branchId:
+              type: "string"
+              example: "123456789123330002"
+            settlementDate:
+              type: "string"
+              example: "20201209"
+            instructionId:
+              type: "string"
+              example: "123456789123330002"
+            interbankSettlementAmount:
+              type: "integer"
+              example: 10050
+
+    CT3:
+          type: "object"
+          required:
+            - debtorParticipantCode
+            - creditorParticipantCode
+            - responseDate
+            - responseTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - amount
+            - currency
+            - responseCode
+            - feeAmount
+            - settlementDate
+            - transactionType
+            - debtorCCI
+            - branchId
+            - instructionId
+          properties:
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            responseDate:
+              type: "string"
+              example: "20210210"
+            responseTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            amount:
+              type: "integer"
+              example: 10000000
+            currency:
+              type: "string"
+              example: "840"
+            transactionReference:
+              type: "string"
+              example: "123456789"
+            responseCode:
+              type: "string"
+              enum: 
+                - "00"
+                - "05"
+            reasonCode:
+              type: "string"
+              enum: 
+                - "ACTC"
+                - "RJCT"
+                - "RCVD"
+            feeAmount:
+              type: "integer"
+              example: 10000
+            settlementDate:
+              type: "string"
+              example: "20210209"
+            transactionType:
+              type: "string"
+              example: "123"
+            debtorCCI:
+              type: "string"
+              example: "545854585"
+            creditorCCI:
+              type: "string"
+              example: "9981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "120981958477"
+            sameCustomerFlag:
+              type: "string"
+              example: "O"
+            branchId:
+              type: "string"
+              example: "00098765432156437"
+            instructionId:
+              type: "string"
+              example: "00098765432156437"
+    
+    CT4:
+          type: "object"
+          required:
+            - debtorParticipantCode
+            - creditorParticipantCode
+            - responseDate
+            - responseTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - amount
+            - currency
+            - responseCode
+            - feeAmount
+            - settlementDate
+            - transactionType
+            - debtorCCI
+            - instructionId
+            - creationDate
+            - creationTime
+            - channel
+            - interbankSettlementAmount
+          properties:
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            responseDate:
+              type: "string"
+              example: "20210210"
+            responseTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            amount:
+              type: "integer"
+              example: 10000000
+            currency:
+              type: "string"
+              example: "840"
+            transactionReference:
+              type: "string"
+              example: "123456789"
+            responseCode:
+              type: "string"
+              enum: 
+                - "00"
+                - "05"
+            reasonCode:
+              type: "string"
+              enum: 
+                - "ACTC"
+                - "RJCT"
+                - "RCVD"
+            feeAmount:
+              type: "integer"
+              example: 10000
+            settlementDate:
+              type: "string"
+              example: "20210209"
+            transactionType:
+              type: "string"
+              example: "123"
+            debtorCCI:
+              type: "string"
+              example: "8585898585"
+            creditorCCI:
+              type: "string"
+              example: "9981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "120981958477"
+            sameCustomerFlag:
+              type: "string"
+              example: "O"
+            instructionId:
+              type: "string"
+              example: "00098765432156437"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            channel:
+              type: "string"
+              example: "15"
+            interbankSettlementAmount:
+              type: "integer"
+              example: 10000
+    
+    CT5:
+          type: "object"
+          required:
+            - debtorParticipantCode
+            - creditorParticipantCode
+            - responseDate
+            - responseTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - amount
+            - currency
+            - responseCode
+            - feeAmount
+            - settlementDate
+            - transactionType
+            - debtorCCI
+            - instructionId
+            - creationDate
+            - creationTime
+            - channel
+            - interbankSettlementAmount
+          properties:
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            responseDate:
+              type: "string"
+              example: "20210210"
+            responseTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            amount:
+              type: "integer"
+              example: 10000000
+            currency:
+              type: "string"
+              example: "840"
+            transactionReference:
+              type: "string"
+              example: "123456789"
+            responseCode:
+              type: "integer"
+              enum: 
+                - "00"
+                - "05"
+            feeAmount:
+              type: "integer"
+              example: 10000
+            settlementDate:
+              type: "string"
+              example: "20210209"
+            transactionType:
+              type: "string"
+              example: "123"
+            debtorCCI:
+              type: "string"
+              example: "9819584559"
+            creditorCCI:
+              type: "string"
+              example: "9981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "120981958477"
+            sameCustomerFlag:
+              type: "string"
+              example: "O"
+            instructionId:
+              type: "string"
+              example: "00098765432156437"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            channel:
+              type: "string"
+              example: "15"
+            interbankSettlementAmount:
+              type: "integer"
+              example: 10000
+        
+    AV1:
+          type: "object"
+          required:
+            - debtorParticipantCode 
+            - creditorParticipantCode
+            - creationDate
+            - creationTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - debtorId
+            - debtorIdCode
+            - transactionType
+            - channel
+            - debtorTypeOfPerson
+            - currency
+          properties:
+            debtorParticipantCode: 
+              type: "string"
+              example: "1234"
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            debtorName:
+              type: "string"
+              example: "Juan Martinez"
+            debtorId:
+              type: "string"
+              example: "999999999999"
+            debtorIdCode:
+              type: "string"
+              example: "1"
+            debtorPhoneNumber:
+              type: "string"
+              example:  "7777777"
+            debtorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            debtorMobileNumber:
+              type: "string"
+              example: "888888888"
+            transactionType:
+              type: "string"
+              example: "320"
+            channel:
+              type: "string"
+              example: "15"
+            creditorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            creditorPhoneNumber:
+              type: "string"
+              example:  "7777777"
+            creditorMobileNumber:
+              type: "string"
+              example: "888888888"
+            creditorCCI:
+              type: "string"
+              example:  "9981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "9981958488"
+            debtorTypeOfPerson:
+              type: "string"
+              example: "M"
+            currency:
+              type: "string"
+              example: "840"
+            proxyValue:
+              type: "string"
+              example: "1234567890123"
+            proxyType:
+              type: "string"
+              example: "12345"
+    
+    AV2:
+          type: "object"
+          required:
+            - debtorParticipantCode
+            - creditorParticipantCode
+            - creationDate
+            - creationTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - debtorId
+            - debtorIdCode
+            - transactionType
+            - channel
+            - debtorTypeOfPerson
+            - currency
+            - instructionId
+            - branchId
+          properties:
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            creditorParticipantCode: 
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            debtorName:
+              type: "string"
+              example: "Juan Martinez"
+            debtorId:
+              type: "string"
+              example: "999999999999"
+            debtorIdCode:
+              type: "string"
+              example: "1"
+            debtorPhoneNumber:
+              type: "string"
+              example:  "7777777"
+            debtorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            debtorMobileNumber:
+              type: "string"
+              example: "888888888"
+            transactionType:
+              type: "string"
+              example: "320"
+            channel:
+              type: "string"
+              example: "15"
+            creditorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            creditorPhoneNumber:
+              type: "string"
+              example:  "7777777"
+            creditorMobileNumber:
+              type: "string"
+              example: "888888888"
+            creditorCCI:
+              type: "string"
+              example:  "1981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "1981958488"
+            debtorTypeOfPerson:
+              type: "string"
+              example: "M"
+            currency:
+              type: "string"
+              example: "840"
+            proxyValue:
+              type: "string"
+              example: "1234567890123"
+            proxyType:
+              type: "string"
+              example: "12345"
+            instructionId:
+              type: "string"
+              example: "123456789123330002"
+            branchId:
+              type: "string"
+              example: "123456789123330002"
+
+    AV3:
+          type: "object"
+          required:
+            - debtorParticipantCode
+            - creditorParticipantCode
+            - creationDate
+            - creationTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - branchId
+            - debtorId
+            - debtorIdCode
+            - transactionType
+            - channel
+            - instructionId
+            - responseCode
+            - currency
+          properties:
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            branchId:
+              type: "string"
+              example: "00098765432156437"
+            debtorName:
+              type: "string"
+              example: "Juan Martinez"
+            debtorId:
+              type: "string"
+              example: "999999999999"
+            debtorIdCode:
+              type: "string"
+              example: "1"
+            debtorPhoneNumber:
+              type: "string"
+              example: "7777777"
+            debtorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            debtorMobileNumber:
+              type: "string"
+              example: "888888888"
+            transactionType:
+              type: "string"
+              example: "123"
+            channel:
+              type: "string"
+              example: "15"
+            instructionId:
+              type: "string"
+              example: "00098765432156437"
+            responseCode:
+              type: "string"
+              enum: 
+                - "00"
+                - "05"
+            reasonCode:
+              type: "string"
+              enum: 
+                - "ACTC"
+                - "RJCT"
+                - "RCVD"
+            creditorName:
+              type: "string"
+              example: "Gustavo Chan"
+            creditorAddressLine:
+              type: "string"
+              example: "916 Willshire BLVD #1600, Los Angeles"
+            creditorId:
+              type: "string"
+              example: "999999999998"
+            creditorIdCode:
+              type: "string"
+              example: "1"
+            creditorPhoneNumber:
+              type: "string"
+              example:  "7777777"
+            creditorMobileNumber:
+              type: "string"
+              example: "888888888"
+            creditorCCI:
+              type: "string"
+              example: "1981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "120981958477"
+            sameCustomerFlag:
+              type: "string"
+              example: "O"
+            currency:
+              type: "string"
+              example: "840"
+            proxyValue:
+              type: "string"
+              example: "1234567890123"
+            proxyType:
+              type: "string"
+              example: "12345"
+
+    AV4:
+          type: "object"
+          required:
+            - debtorParticipantCode
+            - creditorParticipantCode
+            - creationDate
+            - creationTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - debtorId
+            - debtorIdCode
+            - transactionType
+            - channel
+            - instructionId
+            - responseCode
+            - currency
+          properties:
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            debtorName:
+              type: "string"
+              example: "Juan Martinez"
+            debtorId:
+              type: "string"
+              example: "999999999999"
+            debtorIdCode:
+              type: "string"
+              example: "1"
+            debtorPhoneNumber:
+              type: "string"
+              example: "7777777"
+            debtorAddressLine:
+              type: "string"
+              example: "915 Willshire BLVD #1600, Los Angeles"
+            debtorMobileNumber:
+              type: "string"
+              example: "888888888"
+            transactionType:
+              type: "string"
+              example: "123"
+            channel:
+              type: "string"
+              example: "15"
+            instructionId:
+              type: "string"
+              example: "00098765432156437"
+            responseCode:
+              type: "string"
+              enum: 
+                - "00"
+                - "05"
+            reasonCode:
+              type: "string"
+              enum: 
+                - "ACTC"
+                - "RJCT"
+                - "RCVD"
+            creditorName:
+              type: "string"
+              example: "Gustavo Chan"
+            creditorAddressLine:
+              type: "string"
+              example: "916 Willshire BLVD #1600, Los Angeles"
+            creditorId:
+              type: "string"
+              example: "999999999998"
+            creditorIdCode:
+              type: "string"
+              example: "1"
+            creditorPhoneNumber:
+              type: "string"
+              example:  "7777777"
+            creditorMobileNumber:
+              type: "string"
+              example: "888888888"
+            creditorCCI:
+              type: "string"
+              example:  "1981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "1981958488"
+            sameCustomerFlag:
+              type: "string"
+              example: "O"
+            currency:
+              type: "string"
+              example: "840"
+            proxyValue:
+              type: "string"
+              example: "1234567890123"
+            proxyType:
+              type: "string"
+              example: "12345"
+
+    CTC1:
+          type: "object"
+          required:
+            - creditorParticipantCode
+            - creationDate
+            - creationTime
+            - currency
+            - referenceInstructionId
+            - instructionId
+            - branchId
+            
+          properties:
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            currency:
+              type: "string"
+              example: "840"
+            transactionReference:
+              type: "string"
+              example: "0826063320123456623906987654"
+            referenceInstructionId:
+              type: "string"
+              example: "2020042409071200115199654321"            
+            instructionId:
+              type: "string"
+              example: "204426434121123456"
+            branchId:
+              type: "string"
+              example: "123456789123330002"
+
+    CTC2:
+          type: "object"
+          required:
+            - creditorParticipantCode
+            - responseDate
+            - responseTime
+            - currency
+            - responseCode
+            - branchId
+            - instructionId
+          properties:
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            responseDate:
+              type: "string"
+              example: "20210209"
+            responseTime:
+              type: "string"
+              example: "231200"
+            currency:
+              type: "string"
+              example: "840"
+            responseCode:
+              type: "string"
+              enum: 
+                - "00"
+                - "05"
+            reasonCode:
+              type: "string"
+              enum: 
+                - "ACTC"
+                - "RJCT"
+                - "RCVD"
+            branchId:
+              type: "string"
+              example: "123456789123330002"
+            instructionId:
+              type: "string"
+              example: "204426434121123456"
+
+    PSR1:
+          type: "object"
+          required:
+            - creditorParticipantCode
+            - creationDate
+            - creationTime
+            - currency
+            - instructionId
+            - originalCreationDate
+            - originalCreationTime
+            
+          properties:
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            currency:
+              type: "string"
+              example: "840"        
+            instructionId:
+              type: "string"
+              example: "204426434121123456"
+            originalCreationDate:
+              type: "string"
+              example: "20210209"
+            originalCreationTime:
+              type: "string"
+              example: "231200"
+
+    PSR2:
+          type: "object"
+          required:
+            - debtorParticipantCode
+            - creditorParticipantCode
+            - responseDate
+            - responseTime
+            - terminalId
+            - retrievalReferenteNumber
+            - trace
+            - currency
+            - responseCode
+            - instructionId
+          properties:
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            creditorParticipantCode:
+              type: "string"
+              example: "1111"
+            responseDate:
+              type: "string"
+              example: "20210210"
+            responseTime:
+              type: "string"
+              example: "231200"
+            terminalId:
+              type: "string"
+              example: "12345678"
+            retrievalReferenteNumber:
+              type: "string"
+              example: "123456789123"
+            trace:
+              type: "string"
+              example: "123456"
+            amount:
+              type: "integer"
+              example: 10000000
+            currency:
+              type: "string"
+              example: "840"
+            transactionReference:
+              type: "string"
+              example: "123456789"
+            responseCode:
+              type: "string"
+              enum: 
+                - "00"
+                - "05"
+            reasonCode:
+              type: "string"
+              enum: 
+                - "ACTC"
+                - "RJCT"
+                - "RCVD"
+            feeAmount:
+              type: "integer"
+              example: 10000
+            settlementDate:
+              type: "string"
+              example: "20210209"
+            transactionType:
+              type: "string"
+              example: "123"
+            debtorCCI:
+              type: "string"
+              example: "9819584559"
+            creditorCCI:
+              type: "string"
+              example: "9981958488"
+            creditorCreditCard:
+              type: "string"
+              example: "120981958477"
+            sameCustomerFlag:
+              type: "string"
+              example: "O"
+            instructionId:
+              type: "string"
+              example: "00098765432156437"
+            interbankSettlementAmount:
+              type: "integer"
+              example: 10000
+
+    SignOn1:
+          type: "object"
+          required:
+            - participantCode
+            - creationDate
+            - creationTime
+            - trace
+            
+          properties:
+            participantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            trace:
+              type: "string"
+              example: "129002"     
+              
+    SignOn2:
+          type: "object"
+          required:
+            - participantCode
+            - responseDate 
+            - responseTime
+            - status
+            - trace
+            
+          properties:
+            participantCode:
+              type: "string"
+              example: "1111"
+            responseDate:
+              type: "string"
+              example: "20210209"
+            responseTime:
+              type: "string"
+              example: "231200"
+            status:
+              type: "string"
+              enum: 
+              - "00"
+              - "05"
+            reasonCode:
+              type: "string"
+              example: "RJCT" 
+            trace:
+              type: "string"
+              example: "129002" 
+            
+    SignOff1:
+          type: "object"
+          required:
+            - participantCode
+            - responseDate
+            - responseTime
+            - trace
+            
+          properties:
+            participantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            trace:
+              type: "string"
+              example: "129002" 
+    
+    SignOff2:
+          type: "object"
+          required:
+            - participantCode
+            - responseDate
+            - responseTime
+            - status
+            - trace
+            
+          properties:
+            participantCode:
+              type: "string"
+              example: "1111"
+            responseDate:
+              type: "string"
+              example: "20210209"
+            responseTime:
+              type: "string"
+              example: "231200"
+            status:
+              type: "string"
+              enum: 
+              - "00"
+              - "05"
+            reasonCode:
+              type: "string"
+              example: "RJCT" 
+            trace:
+              type: "string"
+              example: "129002"
+    ET1:
+          type: "object"
+          required:
+            - participantCode
+            - creationDate
+            - creationTime
+            - trace
+            
+          properties:
+            participantCode:
+              type: "string"
+              example: "1111"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "231200"
+            trace:
+              type: "string"
+              example: "129002"  
+    
+    ET2:
+          type: "object"
+          required:
+            - participantCode
+            - responseDate
+            - responseTime
+            - status
+            - trace
+            
+          properties:
+            participantCode:
+              type: "string"
+              example: "1111"
+            responseDate:
+              type: "string"
+              example: "20210209"
+            responseTime:
+              type: "string"
+              example: "231200"
+            status:
+              type: "string"
+              enum: 
+              - "00"
+              - "05"
+            reasonCode:
+              type: "string"
+              example: "ACTC" 
+            trace:
+              type: "string"
+              example: "129002"
+    
+    SNM971:
+          type: "object"
+          required:
+            - eventCode
+            - eventDate
+            - eventTime
+            - messageIdentification
+            - messageClass
+            - newServiceStatus
+            
+          properties:
+            eventCode:
+              type: "string"
+              example: "971"
+            eventDate:
+              type: "string"
+              example: "20210209"
+            eventTime:
+              type: "string"
+              example: "231200"
+            messageIdentification:
+              type: "string"
+              example: "20200427101103999001"
+            messageClass:
+              type: "string"
+              example: "2345621"
+            newServiceStatus:
+              type: "string"
+              example: "NORMAL"  
+    
+    SNM972:
+          type: "object"
+          required:
+            - eventCode
+            - eventDate
+            - eventTime
+            - messageIdentification
+            - messageClass
+            - currency
+            - memberIdentification
+            - name
+            - status
+          properties:
+            eventCode:
+              type: "string"
+              example: "972"
+            eventDate:
+              type: "string"
+              example: "20210209"
+            eventTime:
+              type: "string"
+              example: "231200"
+            messageIdentification:
+              type: "string"
+              example: "20200427101103999001"
+            messageClass:
+              type: "string"
+              example: "2345621"
+            currency:
+              type: "string"
+              example: "840"
+            memberIdentification:
+              type: "string"
+              example: "0008"
+            name:
+              type: "string"
+              example: "BankofXYZ"
+            status:
+              type: "string"
+              example: "NORMAL"
+    
+    SNM981:
+          type: "object"
+          required:
+            - eventCode
+            - eventDate
+            - eventTime
+            - messageIdentification
+            - messageClass
+            - eventDescription
+          properties:
+            eventCode:
+              type: "string"
+              example: "981"
+            eventDate:
+              type: "string"
+              example: "20210209"
+            eventTime:
+              type: "string"
+              example: "231200"
+            messageIdentification:
+              type: "string"
+              example: "20200427101103999001"
+            messageClass:
+              type: "string"
+              example: "2345621"
+            eventDescription:
+              type: "string"
+              example: "There will be a scheduled test on 24 March 2020"
+      
+    SNM982:
+          type: "object"
+          required:
+            - eventCode
+            - eventDate
+            - eventTime
+            - messageIdentification
+            - messageClass
+            - participantIdentification
+            - participantName
+            - participantStatus
+          properties:
+            eventCode:
+              type: "string"
+              example: "982"
+            eventDate:
+              type: "string"
+              example: "20210209"
+            eventTime:
+              type: "string"
+              example: "231200"
+            messageIdentification:
+              type: "string"
+              example: "20200427101103999001"
+            messageClass:
+              type: "string"
+              example: "2345621"
+            participantIdentification:
+              type: "string"
+              example: "0222"
+            participantName:
+              type: "string"
+              example: "Bank in Peru"
+            participantStatus:
+              type: "string"
+              example: "NORMAL"    
+
+    SNM993:
+          type: "object"
+          required:
+            - eventCode
+            - eventDate
+            - eventTime
+            - messageIdentification
+            - messageClass
+            - bankName
+            - currency
+            - availablePrefundBalanceStatus
+            - openingPrefundedBalance
+            - lowWatermarkValue
+            - highWatermarkValue
+            - availablePrefundedBalance
+          properties:
+            eventCode:
+              type: "string"
+              example: "993"
+            eventDate:
+              type: "string"
+              example: "20210209"
+            eventTime:
+              type: "string"
+              example: "231200"
+            messageIdentification:
+              type: "string"
+              example: "20200427101103999001"
+            messageClass:
+              type: "string"
+              example: "2345621"
+            bankName:
+              type: "string"
+              example: "Bank in Peru"
+            currency:
+              type: "string"
+              example: "840"
+            availablePrefundBalanceStatus:
+              type: "string"
+              example: "NORMAL"  
+            openingPrefundedBalance:
+              type: "integer"
+              example: 1000000  
+            lowWatermarkValue:
+              type: "integer"
+              example: 100000  
+            highWatermarkValue:
+              type: "integer"
+              example: 300000     
+            availablePrefundedBalance:
+              type: "integer"
+              example: 95000  
+                          
+    SNM998:
+          type: "object"
+          required:
+            - eventCode
+            - eventDate
+            - eventTime
+            - messageIdentification
+            - messageClass
+            - memberIdentification
+            - bankName
+            - currency
+            - prefundedBalanceChangeStatus
+            - newPrefundedBalance
+            - previousPrefundedBalance
+          properties:
+            eventCode:
+              type: "string"
+              example: "998"
+            eventDate:
+              type: "string"
+              example: "20210209"
+            eventTime:
+              type: "string"
+              example: "231200"
+            messageIdentification:
+              type: "string"
+              example: "20200427101103999001"
+            messageClass:
+              type: "string"
+              example: "2345621"
+            memberIdentification:
+              type: "string"
+              example: "0222"  
+            bankName:
+              type: "string"
+              example: "Bank in Peru"
+            currency:
+              type: "string"
+              example: "840"
+            prefundedBalanceChangeStatus:
+              type: "string"
+              example: "SUCCESS"  
+            newPrefundedBalance:
+              type: "integer"
+              example: 30000  
+            previousPrefundedBalance:
+              type: "integer"
+              example: 10000     
+                               
+    SNM999:
+          type: "object"
+          required:
+            - eventCode
+            - eventDate
+            - eventTime
+            - messageIdentification
+            - messageClass
+            - previousSettlementWindowDate
+            - previousSettlementCycleStatus
+            - reconciliationCheckpointCutOffDateAndTime
+            - newSettlementWindowDate
+            - newSettlementWindowStatus
+            - currency
+            - memberIdentification
+            - bankName
+            - previousOpeningPrefundedBalance
+            - newOpeningPrefundedBalance
+            - numberOfCreditTransferReceivedAndAccepted
+            - valueOfCreditTransferReceivedAndAccepted
+            - numberOfCreditTransferReceivedandRejected
+            - valueOfCreditTransferReceivedAndRejected
+            - numberOfCreditTransferSentAndAccepted
+            - valueOfCreditTransferSentAndAccepted
+            - numberCreditTransferSentAndRejected
+            - valueOfCreditTransferSentAndRejected
+            - netPosition
+            - countOfSupplementalFunding
+            - grossValueOfSupplementalFunding
+            - countOfDrawdowns
+            - grossValueOfDrawdowns
+          properties:
+            eventCode:
+              type: "string"
+              example: "999"
+            eventDate:
+              type: "string"
+              example: "20210209"
+            eventTime:
+              type: "string"
+              example: "231200"
+            messageIdentification:
+              type: "string"
+              example: "20200427101103999001"
+            messageClass:
+              type: "string"
+              example: "2345621"
+            previousSettlementWindowDate:
+              type: "string"
+              example: "2020-08-09"  
+            previousSettlementCycleStatus:
+              type: "string"
+              example: "COMPLETE"  
+            reconciliationCheckpointCutOffDateAndTime:
+              type: "string"
+              example: "2020-03-08T11:45:00"
+            newSettlementWindowDate:
+              type: "string"
+              example: "2020-08-09"
+            newSettlementWindowStatus:
+              type: "string"
+              example: "INPROGRESS"  
+            currency:
+              type: "string"
+              example: "840"  
+            memberIdentification:
+              type: "string"
+              example: "0222"     
+            bankName:
+              type: "string"
+              example: "Bank in Peru"
+            previousOpeningPrefundedBalance:
+              type: "integer"
+              example: 30000
+            newOpeningPrefundedBalance:
+              type: "integer"
+              example: 200000
+            numberOfCreditTransferReceivedAndAccepted:
+              type: "string"
+              example: "105"
+            valueOfCreditTransferReceivedAndAccepted:
+              type: "integer"
+              example: 150000
+            numberOfCreditTransferReceivedandRejected:
+              type: "string"
+              example: "4"  
+            valueOfCreditTransferReceivedAndRejected:
+              type: "integer"
+              example: 443
+            numberOfCreditTransferSentAndAccepted:
+              type: "string"
+              example: "605"  
+            valueOfCreditTransferSentAndAccepted:
+              type: "integer"
+              example: 50000
+            numberCreditTransferSentAndRejected:
+              type: "string"
+              example: "15"
+            valueOfCreditTransferSentAndRejected:
+              type: "integer"
+              example: 63443
+            netPosition:
+              type: "integer"
+              example: 100000  
+            countOfSupplementalFunding:
+              type: "string"
+              example: "1"     
+            grossValueOfSupplementalFunding:
+              type: "integer"
+              example: 80000
+            countOfDrawdowns:
+              type: "string"
+              example: "1"
+            grossValueOfDrawdowns:
+              type: "integer"
+              example: 10000 
+
+    Reject:
+          type: "object"
+          required:
+            - originalMessage
+            - responseDate
+            - responseTime
+            - status
+            - reasonCode
+          properties:
+            originalMessage:
+              type: "string"
+              example: "'{CT1:{debtorParticipantCode:1234,creditorParticipantCode:1111, creationDate:20210209,...}}'"
+            responseDate:
+              type: "string"
+              example: "20210318"
+            responseTime:
+              type: "string"
+              example:  "150829"
+            status:
+              type: "string"
+              example: "05"
+            reasonCode:
+              type: "string"
+              example: "I650"
+            instructionId:
+              type: "string"
+              example: "204426434121123456"
+            trace:
+              type: "string"
+              example: "123456"
+            transactionReference:
+              type: "string"
+              example: "123456789"
+            creationDate:
+              type: "string"
+              example: "20210209"
+            creationTime:
+              type: "string"
+              example: "193009"
+            debtorParticipantCode:
+              type: "string"
+              example: "1234"
+            originalMessageDefinitionIdentifier:
+              type: "string"
+              example: "CT1"
+            terminalId:
+              type: "string"
+              example: "12345678"
